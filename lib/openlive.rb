@@ -1,8 +1,7 @@
 require "gem_config"
 require "openlive/version"
 require "openlive/oauth"
-require "openlive/request"
-require "openlive/response"
+require "openlive/base"
 
 module Openlive
   include GemConfig::Base
@@ -22,15 +21,5 @@ module Openlive
 
     has :default_headers, classes: Hash, default: {}
     has :base_uri, classes: String, default: "https://api.openlive.co/v1"
-  end
-
-  class << self
-    def connection
-      @connection ||= Faraday.new(url: Openlive.configuration.base_uri) do |faraday|
-        faraday.request  :url_encoded
-        faraday.response :logger
-        faraday.adapter  Faraday.default_adapter
-      end
-    end
   end
 end

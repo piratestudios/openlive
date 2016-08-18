@@ -1,5 +1,5 @@
 module Openlive
-  class Response
+  class Response < Base
 
   end
 end
