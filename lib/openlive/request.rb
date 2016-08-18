@@ -9,10 +9,7 @@ module Openlive
       # @return [Openlive::Response]
 
       def create(path, params = {})
-        response = connection.get(path, default_params.merge(params)) do |req|
-          req.headers['Authorization'] = "Bearer #{oauth.token.token}"
-        end
-
+        response = connection.get(path, default_params.merge(params))
         Response.new(response)
       end
 
