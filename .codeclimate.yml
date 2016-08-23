@@ -1,0 +1,36 @@
+---
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      - javascript
+      - python
+      - php
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+    exclude_fingerprints:
+    - dc54b2c5e5bccce7150dfd3ebc565b4a
+    - ec6d88f4e229f476ae811a1e438148e6
+    - b5f6499d2a57832a989a7f28f4d95c12
+ratings:
+  paths:
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
+  - "**.rb"
+exclude_paths:
+- spec/
+engines:
+  rubocop:
+    enabled: true
+    exclude_fingerprints:
+    - dc54b2c5e5bccce7150dfd3ebc565b4a
+    - ec6d88f4e229f476ae811a1e438148e6
+    - b5f6499d2a57832a989a7f28f4d95c12
