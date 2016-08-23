@@ -22,6 +22,10 @@ describe Openlive::Request do
           expect(connection).to receive(:send).with(http_method, "test/path", { test: "Excellent!", test2: "Woo" })
           method_call
         end
+
+        it "returns a response object" do
+          expect(method_call).to be_an(Openlive::Response)
+        end
       end
     end
   end
