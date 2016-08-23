@@ -1,5 +1,6 @@
 module Openlive
   class Response < Base
+    # @return [Faraday::Response]
     attr_reader :response
 
     # Initialize the response object
