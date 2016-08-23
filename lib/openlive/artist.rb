@@ -4,8 +4,8 @@ module Openlive
       # Find and return an artist record
       #
       # @param id [String]
-      # @return [Openlive::Artist]
-
+      # @return [Artist]
+      # @raise [APIError] Will raise an error on unsuccessful response
       def find(id)
         response = Request.get("artists/#{id}")
 
@@ -16,13 +16,13 @@ module Openlive
 
       # Create a new artist on Openlive
       #
-      # @param [Hash] params A hash of attributes to set
-      # @option params [String] :name
-      # @option params [Numeric] :userId
+      # @param [Hash] attributes A hash of attributes to set
+      # @option attributes [String] :name
+      # @option attributes [String] :userId
       # @return [Artist] the created artist object
-
-      def create(params)
-        response = Request.post("artists", { request: params })
+      # @raise [APIError] Will raise an error on unsuccessful response
+      def create(attributes)
+        response = Request.post("artists", { request: attributes })
 
         handle_response(response, error_class: APIError) do |response|
           new(response.body)
@@ -32,7 +32,7 @@ module Openlive
       # Fetch and return a list of all artists
       #
       # @return [Array<Artist>]
-
+      # @raise [APIError] Will raise an error on unsuccessful response
       def all
         response = Request.get("artists")
 
@@ -44,4 +44,4 @@ module Openlive
       end
     end
   end
-enD
+end

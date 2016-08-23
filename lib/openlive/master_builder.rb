@@ -4,7 +4,7 @@ module Openlive
       # Fetch and return a list of all master builder units
       #
       # @return [Array<MasterBuilder>]
-
+      # @raise [APIError] Will raise an error on unsuccessful response
       def all
         response = Request.get("masterbuilders")
 

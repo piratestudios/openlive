@@ -5,7 +5,6 @@ module Openlive
     # Initialize the response object
     #
     # @param [Faraday::Response] faraday_response
-
     def initialize(faraday_response)
       @response = faraday_response
     end
@@ -13,7 +12,6 @@ module Openlive
     # Was the request successful?
     #
     # @return [Truthy]
-
     def success?
       response.success?
     end
@@ -21,7 +19,6 @@ module Openlive
     # Parse the response from the server
     #
     # @return [Hash,Nil]
-
     def body
       @body ||= JSON.parse(response.body)
     end
@@ -29,10 +26,9 @@ module Openlive
     # Convenience method for fetching the error message
     #
     # @return [String]
-
     def error_message
       if !success?
-        body["Message"]
+        body
       end
     rescue JSON::ParserError => ex
       ex.message
@@ -41,7 +37,6 @@ module Openlive
     # Simple method missing accessor for reading returned attributes
     #
     # @return [String] the raw returned string from the API
-
     def method_missing(method_name, *opts, &block)
       body[method_name.to_s] if body.is_a?(Hash)
     end

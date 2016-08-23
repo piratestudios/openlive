@@ -7,7 +7,6 @@ module Openlive
       # @param [Hash]
       #
       # @return [Openlive::Response]
-
       def get(path, params = {})
         response = connection.get(path, default_params.merge(params))
         Response.new(response)
@@ -19,7 +18,6 @@ module Openlive
       # @param [Hash]
       #
       # @return [Openlive::Response]
-
       def post(path, params = {})
         response = connection.post(path, default_params.merge(params))
         Response.new(response)

@@ -7,7 +7,6 @@ module Openlive
     #
     # @param data [Hash]
     # @return [Hash] the API data
-
     def initialize(data)
       self.api_data = data
     end
@@ -15,7 +14,6 @@ module Openlive
     # Instance convenience method for the connection
     #
     # @return [Faraday::Connection]
-
     def connection
       self.class.connection
     end
@@ -23,7 +21,6 @@ module Openlive
     # Instance convenience method for oauth instance
     #
     # @return [Openlive::OAuth]
-
     def oauth
       self.class.oauth
     end
@@ -37,7 +34,7 @@ module Openlive
     # @param error_class [OpenliveError]
     # @param message [String] an optional message for the exception if raised
     # @yield [Response] Block called for success condition
-
+    # @raise [OpenliveError] Will raise an error on unsuccessful response
     def handle_response(response, error_class: OpenliveError, message: nil, &block)
       message = case
       when !message.nil?
@@ -57,7 +54,6 @@ module Openlive
       # Faraday connection
       #
       # @return [Faraday::Connection]
-
       def connection
         @connection ||= (
           conn = Faraday.new(url: Openlive.configuration.base_uri) do |faraday|
@@ -75,7 +71,6 @@ module Openlive
       # OAuth handler
       #
       # @return [Openlive::OAuth]
-
       def oauth
         @oauth ||= OAuth.new
       end
@@ -88,5 +83,6 @@ end
 
 require "openlive/request"
 require "openlive/response"
+require "openlive/artist"
 require "openlive/master_builder"
 require "openlive/user"
