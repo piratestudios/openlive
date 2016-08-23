@@ -25,4 +25,45 @@ describe Openlive::OAuth do
       )
     end
   end
+
+  describe "#token" do
+    before do
+      allow(subject).to receive(:requisition_token) { true }
+      allow(subject).to receive(:current_token) { current_token }
+    end
+
+    after { subject.token }
+
+    context "no current token" do
+      let(:current_token) { nil }
+      it { is_expected.to receive(:requisition_token) }
+    end
+
+    context "token expired" do
+      let(:current_token) { double('current_token', expired?: true) }
+      it { is_expected.to receive(:requisition_token) }
+    end
+
+    context "existing valid token" do
+      let(:current_token) { double('current_token', expired?: false) }
+      it { is_expected.to receive(:current_token) }
+      it { is_expected.to_not receive(:requisition_token) }
+    end
+  end
+
+  describe "#requisition_token" do
+    after do
+      VCR.use_cassette("oauth_token") do
+        subject.requisition_token
+      end
+    end
+
+    it "gets a token from the identity server" do
+      expect(subject.client).to receive_message_chain(:client_credentials, :get_token).with(scope: "tenant")
+    end
+
+    it "assigns the token" do
+      expect(subject).to receive(:current_token=).with(an_instance_of(OAuth2::AccessToken))
+    end
+  end
 end

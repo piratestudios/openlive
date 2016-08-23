@@ -15,8 +15,8 @@ module Openlive
     }
 
     has :oauth_credentials, classes: Hash, default: {
-      client_id: "",
-      client_secret: "",
+      client_id: ENV['OAUTH_CLIENT_ID'],
+      client_secret: ENV['OAUTH_CLIENT_SECRET'],
     }
 
     has :default_headers, classes: Hash, default: {}
