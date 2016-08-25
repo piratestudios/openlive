@@ -9,8 +9,7 @@ module Openlive
       #
       # @return [Openlive::Response]
       %w(get post).each do |http_method|
-        define_method(http_method) do |path, params|
-          params ||= {}
+        define_method(http_method) do |path, params = {}|
           response = connection.send(http_method, path, default_params.merge(params))
           Response.new(response)
         end

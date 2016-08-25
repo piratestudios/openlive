@@ -25,31 +25,6 @@ module Openlive
       self.class.oauth
     end
 
-    protected
-
-    # Raise an exception or execute the following block,
-    # used for generic error handling for all routes
-    #
-    # @param response [Response]
-    # @param error_class [OpenliveError]
-    # @param message [String] an optional message for the exception if raised
-    # @yield [Response] Block called for success condition
-    # @raise [OpenliveError] Will raise an error on unsuccessful response
-    def handle_response(response, error_class: OpenliveError, message: nil, &block)
-      message = case
-      when !message.nil?
-        message
-      when error_class == APIError
-        "endpoint returned a #{response.status} status"
-      end
-
-      if response.success?
-        block.call(response)
-      else
-        raise error_class, message
-      end
-    end
-
     class << self
       # Faraday connection
       #
@@ -74,10 +49,30 @@ module Openlive
       def oauth
         @oauth ||= OAuth.new
       end
-    end
 
-    class OpenliveError < StandardError; end
-    class APIError < OpenliveError; end
+      # Raise an exception or execute the following block,
+      # used for generic error handling for all routes
+      #
+      # @param response [Response]
+      # @param error_class [OpenliveError]
+      # @param message [String] an optional message for the exception if raised
+      # @yield [Response] Block called for success condition
+      # @raise [OpenliveError] Will raise an error on unsuccessful response
+      def handle_response(response, error_class: Openlive::Error, message: nil, &block)
+        message = case
+        when !message.nil?
+          message
+        when error_class == Openlive::APIError
+          "endpoint returned a #{response.status} status"
+        end
+
+        if response.success?
+          block.call(response)
+        else
+          raise error_class, message
+        end
+      end
+    end
   end
 end
 

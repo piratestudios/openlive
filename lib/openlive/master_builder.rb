@@ -8,7 +8,7 @@ module Openlive
       def all
         response = Request.get("masterbuilders")
 
-        handle_response(response, error_class: APIError) do |response|
+        handle_response(response, error_class: Openlive::APIError) do |response|
           response.body['data'].map do |mb|
             new(mb)
           end

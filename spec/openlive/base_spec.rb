@@ -32,8 +32,34 @@ describe Openlive::Base do
 
       it { is_expected.to eq(oauth) }
     end
+  end
+
+  describe "class methods" do
+    describe "#connection" do
+      subject { Openlive::Base.connection }
+
+      before do
+        allow(Openlive::Base.oauth).to receive(:token) { double('token', token: "Excellent!") }
+      end
+
+      it { is_expected.to be_a(Faraday::Connection) }
+
+      it "sets the Bearer token" do
+        expect(subject.headers["Authorization"]).to eq("Bearer Excellent!")
+      end
+
+      it "sets the URL prefix" do
+        expect(subject.url_prefix).to eq(URI(Openlive.configuration.base_uri))
+      end
+    end
+
+    describe "#oauth" do
+      subject { Openlive::Base.oauth }
+      it { is_expected.to be_an(Openlive::OAuth) }
+    end
 
     describe "#handle_response" do
+      let(:base) { Openlive::Base }
       let(:response) { double('response') }
       let(:error_class) { nil }
       let(:message) { nil }
@@ -60,7 +86,7 @@ describe Openlive::Base do
           it "raises the given message" do
             expect {
               base.send(:handle_response, response, message: message)
-            }.to raise_exception(Openlive::Base::OpenliveError, message)
+            }.to raise_exception(Openlive::Error, message)
           end
         end
 
@@ -74,41 +100,16 @@ describe Openlive::Base do
           end
 
           context "error_class is APIError" do
-            let(:error_class) { Openlive::Base::APIError }
+            let(:error_class) { Openlive::APIError }
 
             it "raises an APIError" do
               expect {
                 base.send(:handle_response, response, error_class: error_class)
-              }.to raise_exception(Openlive::Base::APIError, "endpoint returned a #{response.status} status")
+              }.to raise_exception(Openlive::APIError, "endpoint returned a #{response.status} status")
             end
           end
         end
       end
-    end
-  end
-
-  describe "class methods" do
-    describe "#connection" do
-      subject { Openlive::Base.connection }
-
-      before do
-        allow(Openlive::Base.oauth).to receive(:token) { double('token', token: "Excellent!") }
-      end
-
-      it { is_expected.to be_a(Faraday::Connection) }
-
-      it "sets the Bearer token" do
-        expect(subject.headers["Authorization"]).to eq("Bearer Excellent!")
-      end
-
-      it "sets the URL prefix" do
-        expect(subject.url_prefix).to eq(URI(Openlive.configuration.base_uri))
-      end
-    end
-
-    describe "#oauth" do
-      subject { Openlive::Base.oauth }
-      it { is_expected.to be_an(Openlive::OAuth) }
     end
   end
 end
