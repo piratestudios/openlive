@@ -2,37 +2,63 @@ require 'spec_helper'
 
 describe Openlive::Artist do
   describe "class methods" do
-    describe "#find" do
-      subject(:response) { Openlive::Artist.find(id) }
+    let(:attributes) do
+      {
+        username: "TestArtistUser",
+        email: "admin+testartistuser@piratestudios.co.uk"
+      }
+    end
 
+    let!(:user) do
+      VCR.use_cassette("artists/find/_user_create", record: :once) do
+        Openlive::User.create(attributes)
+      end
+    end
+
+    describe "#find" do
       around(:each) do |example|
-        VCR.use_cassette("artists/find", &example)
+        VCR.use_cassette("artists/find/#{id}", record: :once, &example)
       end
 
+      let(:artist) { Openlive::Artist.create(name: "TestArtistFind", userId: user.id) }
+      subject(:response) { Openlive::Artist.find(id) }
+
       context "id is present" do
-        let(:id) { 1 }
-        subject { response.success? }
+        let(:id) { artist.id }
+        subject { response.response.success? }
 
         it { is_expected.to be true }
       end
 
-      context "id is not present" do
-        let(:id) { nil }
-        subject { response.success? }
+      context "id is incorrect" do
+        let(:id) { "incorrect_id" }
+        subject { response }
 
-        it { is_expected.to be false }
+        it "raises an error" do
+          expect { subject }.to raise_error(Openlive::APIError)
+        end
       end
+    end
+
+    describe "#create" do
+      subject(:response) { Openlive::Artist.create(name: "TestArtistCreate", userId: user.id) }
+
+      around(:each) do |example|
+        VCR.use_cassette("artists/create", record: :once, &example)
+      end
+
+      it { is_expected.to be_an(Openlive::Artist) }
     end
 
     describe "#all" do
       subject { Openlive::Artist.all }
 
       around(:each) do |example|
-        VCR.use_cassette("artists/all", &example)
+        VCR.use_cassette("artists/all", record: :once, &example)
       end
 
-      it "returns successfully" do
-        expect(subject.success?).to be true
+      it "returns an array" do
+        expect(subject).to be_an(Array)
       end
     end
   end

@@ -10,7 +10,7 @@ module Openlive
         response = Request.get("users/#{id}")
 
         handle_response(response, error_class: APIError) do |response|
-          new(response.body)
+          new(response.body, response: response)
         end
       end
 
@@ -23,7 +23,7 @@ module Openlive
         response = Request.get("users", email: email)
 
         handle_response(response, error_class: APIError) do |response|
-          new(response.body)
+          new(response.body, response: response)
         end
       end
 
@@ -36,10 +36,10 @@ module Openlive
       # @return [User] the created user object
       # @raise [APIError] Will raise an error on unsuccessful response
       def create(attributes)
-        response = Request.post("users", { request: attributes })
+        response = Request.post("users", attributes)
 
         handle_response(response, error_class: APIError) do |response|
-          new(response.body)
+          new(response.body, response: response)
         end
       end
     end

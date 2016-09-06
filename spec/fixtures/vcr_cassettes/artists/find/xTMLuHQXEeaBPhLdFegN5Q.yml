@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://staging-api.openlive.co/v1/artists/xTMLuHQXEeaBPhLdFegN5Q
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMxNTUxMDksImV4cCI6MTQ3MzE1ODcwOSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.ju3txyvW_3rKXeBk8qQwnwt_ORAZp9x5OzLRxdN-llfhl4AvVg8pRxBlZphmQnRqCD7ZVyWvU2YogzRiPtx0uxx3BuToQ5h94smLRRIZKTCkim51d3ApvfOyKQEdEWO55ZHrIE1l4XE1M_0qq-vBrwvXIJG_3P_m-mn6CM6WlS5a8ekreG8JZjHm33Xku5itEgoGJVSJBEqAA72thISOnWM0-vuS4NXtKl2BE0E3VSDozo86K31qRm5CaOmlnZOHgdvMvtGBVOcAdpWl0NMKCv8sbMcelqcZySYtLCgJ8bb0RL1aIEDKy-TiIuq6Yn8s0rPSCKC6UxLYa_Y-xKgN7w
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Tue, 06 Sep 2016 09:53:33 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"xTMLuHQXEeaBPhLdFegN5Q","name":"TestArtistFind"}'
+    http_version: 
+  recorded_at: Tue, 06 Sep 2016 09:53:48 GMT
+recorded_with: VCR 3.0.3

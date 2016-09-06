@@ -1,0 +1,137 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://staging-api.openlive.co/v1/users/W7MaizR5UEias32shczKlA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzI3MjQ1MDUsImV4cCI6MTQ3MjcyODEwNSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.p92B7NeBOVaGK6GyGLY4sg9_xAk1ivPJCt5vX1dpUKsC-FgbvMrOLWNJkJS7BYwqxkRsK2RFAAPqNgYcRgpD2HC8bibRL9LqWaIDXhwrylKeLCCMItq-Ej7cmTs687PV7KyaCrC70mVmL_FlqtXuWPIEPlx4hiZLR0Yl4KIrpxleqggz3kMJh4Gzi3Id46OJHZK_GlgCPdmSr_1xWF8VdSvW9H7zGqzSO75fypbQh_oP-VZI2S1rLDxtQorcnTokdKLunftwCIKTOyKuONryKDedUsnPmslcw0gqrgbPuW_1Dl7Y9T16l4ijMO3hSQUfnlEkLCe_ME0i3-irt_U7uw
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Thu, 01 Sep 2016 10:08:28 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"W7MaizR5UEias32shczKlA","username":"Test9421407","email":"admin+9421407@piratestudios.co.uk","artists":[]}'
+    http_version: 
+  recorded_at: Thu, 01 Sep 2016 10:08:41 GMT
+- request:
+    method: post
+    uri: https://staging-api.openlive.co/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"username":"Test8847031","email":"admin+8847031@piratestudios.co.uk"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzI3MjQ1MDUsImV4cCI6MTQ3MjcyODEwNSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.p92B7NeBOVaGK6GyGLY4sg9_xAk1ivPJCt5vX1dpUKsC-FgbvMrOLWNJkJS7BYwqxkRsK2RFAAPqNgYcRgpD2HC8bibRL9LqWaIDXhwrylKeLCCMItq-Ej7cmTs687PV7KyaCrC70mVmL_FlqtXuWPIEPlx4hiZLR0Yl4KIrpxleqggz3kMJh4Gzi3Id46OJHZK_GlgCPdmSr_1xWF8VdSvW9H7zGqzSO75fypbQh_oP-VZI2S1rLDxtQorcnTokdKLunftwCIKTOyKuONryKDedUsnPmslcw0gqrgbPuW_1Dl7Y9T16l4ijMO3hSQUfnlEkLCe_ME0i3-irt_U7uw
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
+      location:
+      - https://staging-api.openlive.co/v1/users/RXKnMCC9CEeIHkZKOvTJbw
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Thu, 01 Sep 2016 10:08:37 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"RXKnMCC9CEeIHkZKOvTJbw","username":"Test8847031","email":"admin+8847031@piratestudios.co.uk","artists":[]}'
+    http_version: 
+  recorded_at: Thu, 01 Sep 2016 10:08:50 GMT
+- request:
+    method: get
+    uri: https://staging-api.openlive.co/v1/users/RXKnMCC9CEeIHkZKOvTJbw
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzI3MjQ1MDUsImV4cCI6MTQ3MjcyODEwNSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.p92B7NeBOVaGK6GyGLY4sg9_xAk1ivPJCt5vX1dpUKsC-FgbvMrOLWNJkJS7BYwqxkRsK2RFAAPqNgYcRgpD2HC8bibRL9LqWaIDXhwrylKeLCCMItq-Ej7cmTs687PV7KyaCrC70mVmL_FlqtXuWPIEPlx4hiZLR0Yl4KIrpxleqggz3kMJh4Gzi3Id46OJHZK_GlgCPdmSr_1xWF8VdSvW9H7zGqzSO75fypbQh_oP-VZI2S1rLDxtQorcnTokdKLunftwCIKTOyKuONryKDedUsnPmslcw0gqrgbPuW_1Dl7Y9T16l4ijMO3hSQUfnlEkLCe_ME0i3-irt_U7uw
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Thu, 01 Sep 2016 10:08:37 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"RXKnMCC9CEeIHkZKOvTJbw","username":"Test8847031","email":"admin+8847031@piratestudios.co.uk","artists":[]}'
+    http_version: 
+  recorded_at: Thu, 01 Sep 2016 10:08:51 GMT
+- request:
+    method: get
+    uri: https://staging-api.openlive.co/v1/users/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzI3MjYzNDMsImV4cCI6MTQ3MjcyOTk0MywiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.nUD8tWWRyk4X98vyRKPnYnide5XF2dOKqKpC7e3qGSwY5H5BCHphWu4QjHuQedohquikWrsjGoEq-TGLL6m5scTaRWAnJYrto26Y4YAny4ZYPtRbwnPkK3GjGYAQajGVZTn0-nkBpMDY05AtGRwUbIBtxKF5GncvjtwH0tQLyTeIzgYD14b69y4jiPENTzeFb5ZRE04TMJ3-PVfa8EA40d1-WY4JtIIK9g--VixflAOiXJo8mxFrKlSxjTv-DDfGpMoUzN2gDwKAa1dypyCvtQMNEe8fEkXjhgL0sG1DpXNZgT-QumU-22qM-bEu2Ua2X9tvqrhXZVCnhppcOfDquQ
+  response:
+    status:
+      code: 500
+      message: 
+    headers:
+      content-length:
+      - '0'
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Thu, 01 Sep 2016 10:39:05 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 01 Sep 2016 10:39:19 GMT
+recorded_with: VCR 3.0.3

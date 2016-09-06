@@ -10,7 +10,7 @@ module Openlive
 
         handle_response(response, error_class: Openlive::APIError) do |response|
           response.body['data'].map do |mb|
-            new(mb)
+            new(mb, response: response)
           end
         end
       end

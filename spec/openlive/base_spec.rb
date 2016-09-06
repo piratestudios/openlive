@@ -13,6 +13,14 @@ describe Openlive::Base do
       subject { base.api_data }
 
       it { is_expected.to eq(api_data) }
+
+      describe "setting the response object" do
+        let(:base) { Openlive::Base.new(api_data, response: response) }
+        let(:response) { Openlive::Response.new(double('faraday_response')) }
+        subject { base.response }
+
+        it { is_expected.to eq(response) }
+      end
     end
 
     describe "#connection" do

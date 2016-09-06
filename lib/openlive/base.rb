@@ -1,14 +1,20 @@
 module Openlive
   class Base
+    extend Forwardable
+
     # @return [Hash] a hash of data returned from the API
     attr_accessor :api_data
+
+    # Convenience method for accessing the API response data
+    attr_accessor :response
 
     # Initialize an instance (used by subclasses) with API data
     #
     # @param data [Hash]
     # @return [Hash] the API data
-    def initialize(data = nil)
+    def initialize(data = nil, response: nil)
       self.api_data = data
+      self.response = response
     end
 
     # Instance convenience method for the connection
@@ -23,6 +29,13 @@ module Openlive
     # @return [Openlive::OAuth]
     def oauth
       self.class.oauth
+    end
+
+    # Pass method calls through to the API data
+    def method_missing(name, *args, &block)
+      if api_data.is_a?(Hash)
+        api_data[name.to_s]
+      end
     end
 
     class << self
@@ -71,6 +84,9 @@ module Openlive
         else
           raise error_class, message
         end
+
+      rescue Exception => ex
+        raise error_class, ex.message
       end
     end
   end

@@ -6,11 +6,11 @@ describe Openlive::MasterBuilder do
       subject { Openlive::MasterBuilder.all }
 
       around(:each) do |example|
-        VCR.use_cassette("masterbuilders/all", &example)
+        VCR.use_cassette("masterbuilders/all", record: :all, &example)
       end
 
-      it "returns successfully" do
-        expect(subject.success?).to be true
+      it "returns an array" do
+        expect(subject).to be_an(Array)
       end
     end
   end

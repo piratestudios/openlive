@@ -9,8 +9,8 @@ module Openlive
       def find(id)
         response = Request.get("artists/#{id}")
 
-        handle_response(response, error_class: Openlive::APIError) do |response|
-          new(response.body)
+        handle_response(response, error_class: APIError) do |response|
+          new(response.body, response: response)
         end
       end
 
@@ -22,10 +22,10 @@ module Openlive
       # @return [Artist] the created artist object
       # @raise [APIError] Will raise an error on unsuccessful response
       def create(attributes)
-        response = Request.post("artists", { request: attributes })
+        response = Request.post("artists", attributes)
 
-        handle_response(response, error_class: Openlive::APIError) do |response|
-          new(response.body)
+        handle_response(response, error_class: APIError) do |response|
+          new(response.body, response: response)
         end
       end
 
@@ -36,9 +36,9 @@ module Openlive
       def all
         response = Request.get("artists")
 
-        handle_response(response, error_class: Openlive::APIError) do |response|
+        handle_response(response, error_class: APIError) do |response|
           response.body['data'].map do |a|
-            new(a)
+            new(a, response: response)
           end
         end
       end

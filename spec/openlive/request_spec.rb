@@ -10,22 +10,49 @@ describe Openlive::Request do
       allow(subject).to receive(:connection) { connection }
     end
 
-    %w(get post).each do |http_method|
-      describe "##{http_method}" do
-        let(:method_call) { subject.send(http_method, "test/path", { test: "Excellent!" }) }
+    describe "#get" do
+      let(:method_call) { subject.send(:get, "test/path", { test: "Excellent!" }) }
 
-        before do
-          allow(subject).to receive(:default_params) { { test: "Boo", test2: "Woo" } }
-        end
+      before do
+        allow(subject).to receive(:default_params) { { test: "Boo", test2: "Woo" } }
+        allow(subject).to receive(:default_headers) { { "Content-Type" => "application/json" } }
+      end
 
-        it "calls the method on the connection" do
-          expect(connection).to receive(:send).with(http_method, "test/path", { test: "Excellent!", test2: "Woo" })
-          method_call
-        end
+      it "calls the method on the connection" do
+        expect(connection).to receive(:send).with(
+          :get,
+          "test/path",
+          { test: "Excellent!", test2: "Woo" },
+          { "Content-Type" => "application/json" }
+        )
+        method_call
+      end
 
-        it "returns a response object" do
-          expect(method_call).to be_an(Openlive::Response)
-        end
+      it "returns a response object" do
+        expect(method_call).to be_an(Openlive::Response)
+      end
+    end
+
+    describe "#post" do
+      let(:method_call) { subject.send(:post, "test/path", { test: "Excellent!" }) }
+
+      before do
+        allow(subject).to receive(:default_params) { { test: "Boo", test2: "Woo" } }
+        allow(subject).to receive(:default_headers) { { "Content-Type" => "application/json" } }
+      end
+
+      it "calls the method on the connection" do
+        expect(connection).to receive(:send).with(
+          :post,
+          "test/path",
+          JSON.generate({ test: "Excellent!", test2: "Woo" }),
+          { "Content-Type" => "application/json" }
+        )
+        method_call
+      end
+
+      it "returns a response object" do
+        expect(method_call).to be_an(Openlive::Response)
       end
     end
   end

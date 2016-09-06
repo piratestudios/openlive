@@ -1,0 +1,139 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openlive.co/v1/artists/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzI2NTY1ODcsImV4cCI6MTQ3MjY2MDE4NywiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoiakZVc1V1b1dBVW1FQUNFYzZadTZhdyIsInNjb3BlIjoidGVuYW50In0.dloLjTpuXomOVtCT_5Z0l8AoxyklVkIqAfZLkALUb6WPL5r9t4Gp1yofGyHvdDNKoUmDfviN0PgOK0Qc6Afyer879Bc0FUZwUAqAqw4tys6dVxf8vPZndu3jXhUi91hYlJAj_U-G0PZ9Ggln5puPeWYnSc8IawT6Z6vpFDiMjHqs2rv4dNf33c2WrwFnuhXsQLAvH4X1q3QHseW-MoDFnX-lD8Mk_ZauhBls8u_piIbkOuQMASjbOOcPxfTj7Wu-2ldS_Vs0AKIfzRBSJIg6jTekgiLoNBg2nvXtmJ4bMQoko2nauin-OB8Y_Sb1R5EPRvoqCfda7mQ_f6MsAllSUA
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Wed, 31 Aug 2016 15:16:27 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+    http_version: 
+  recorded_at: Wed, 31 Aug 2016 15:16:39 GMT
+- request:
+    method: get
+    uri: https://staging-api.openlive.co/artists/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzI3MTg0OTYsImV4cCI6MTQ3MjcyMjA5NiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.GddCqJQExIEDy-XNzVpWgyzd3hArCOESWsxrHe8dvLBjUonVpGIrLPR6skF3_n6uKdCKZDRFOb_bm6uRbtoFKWUqVmyzTjxhihsvw8sZ5-W21NFQZKIytz_vHuTsmi6LJuDgTBCtB3K1-MiV3OxwczU1yBoIHaV9UesdZApwAbmmxQwZOYqAOUy5GMq8ogtDOQ26UYUITbTPz09WazN6PiDzVXEYUCvt6o6A9p2ciq2U-EJwJFRQTo8arhxYjGbo2mW1i7uJj_2BUfPhQCNfQthadt_XD_LmKtajQWUJ0tCEtPtLlDAM0i-uUBmxgr603ug5n3CbszLM2giFo-BWLg
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      content-length:
+      - '0'
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Thu, 01 Sep 2016 08:28:19 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 01 Sep 2016 08:28:32 GMT
+- request:
+    method: post
+    uri: https://identity.openlive.co/connect/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials&scope=tenant
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - Basic cExGbENGUHVVMDI3dVNkWmZBaUtRZzo1ZGNmMmU1NzVkNmI0MjdjYTZmZjJhZTNmZGIwZDBlMQ==
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      cache-control:
+      - no-store, no-cache, max-age=0
+      pragma:
+      - no-cache
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Tue, 06 Sep 2016 08:28:01 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMxNTA0ODEsImV4cCI6MTQ3MzE1NDA4MSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.VwokiK4YE2hSS0znJSO4IJMIvBFUgNFHRgi8vbTTMA4RboP_SFfoE7oQ3C6dDJrnYNCJGgHhCmvDE5K3o1gKwV2xMAy9fwO6fVjSV3yFeuJxKMUzBXPr_hDq-uakYMHKmkNIK_hnN2e0eXVkaENpu8Hbdv9qat_8lrzOW8DJbYToheGa29rf0gwI1oMlnP5ByaugHP9kL3-_o0104HJnhvFt5SsqHvbQq8u9UHhwF8ZVCqDm0I1AXy2ka2mWY5RUlMOJ9ssjCTIZCVv8h0uOJ_27WTFGIHm_2c-NmSA7StzjF4ljDGotCLEpz3_uOVp5N84deodhlT3lJ6C0QsusQw","expires_in":3600,"token_type":"Bearer"}'
+    http_version: 
+  recorded_at: Tue, 06 Sep 2016 08:28:15 GMT
+- request:
+    method: get
+    uri: https://staging-api.openlive.co/v1/artists/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMxNTA1NDksImV4cCI6MTQ3MzE1NDE0OSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.aI3K6TFAS31uAmZLFVWoHtuBUW1mWyO1yxDd7GM9AVKeH9JTzgnecViLGX59s-e2CsG8HwNX6qAOg0LoFlYtMjxm229PursEGkIDjtoKJ-7s7JjhACGFfA3U6Rqhv3OSTvF8tRnyTraNffhd9Q3NQKIIkEnTm-Pl74ty8HSm_Hc1xBr1pUC3gEuxbNpG5EHXFfv1WGXZijrJwtQO2Gr936KQQhBoVCikYr_KlaLFkHjkesj_khyrdj8HiLN4Es8kBIPRg0cZwwxFm5lRVTcEQ_v7gKNAQmVPyntiExvrqzXi3xIyEMuUJ02r6uXIVN0cPiGNl_EnF-QENlaMXMlh0g
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Tue, 06 Sep 2016 08:29:10 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"-11LiXQLEeaBPhLdFegN5Q","name":"Test"},{"id":"2WpxlnQKEeaBPhLdFegN5Q","name":"Test6459464"}]}'
+    http_version: 
+  recorded_at: Tue, 06 Sep 2016 08:29:25 GMT
+recorded_with: VCR 3.0.3
