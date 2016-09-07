@@ -10,7 +10,7 @@ module Openlive
         response = Request.get("bookings/#{id}")
 
         handle_response(response, error_class: APIError) do |response|
-          new(response.body)
+          new(response.body, response: response)
         end
       end
 
@@ -27,7 +27,7 @@ module Openlive
         response = Request.post("bookings", format_attributes(attributes))
 
         handle_response(response, error_class: APIError) do |response|
-          new(response.body)
+          new(response.body, response: response)
         end
       end
 

@@ -17,3 +17,6 @@ VCR.configure do |config|
     config.filter_sensitive_data("<#{env_var}>") { ENV[env_var] }
   end
 end
+
+RSpec.configure do |config|
+end

@@ -39,6 +39,26 @@ module Openlive
         Response.new(response)
       end
 
+      # Perform a delete request against the OpenLIVE API.
+      #
+      # @param [String] path the URI path to perform the request against
+      # @param [Hash] params
+      # @param [Hash] headers
+      #
+      # @return [Openlive::Response]
+      def delete(path, params = {}, headers = {})
+        headers["Content-Type"] ||= "application/json"
+
+        response = connection.send(
+          :delete,
+          path,
+          params,
+          default_headers.merge(headers)
+        )
+
+        Response.new(response)
+      end
+
       private
 
       def default_params
