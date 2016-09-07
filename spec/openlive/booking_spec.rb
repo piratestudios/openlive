@@ -44,7 +44,6 @@ describe Openlive::Booking do
       end
 
       it { is_expected.to be_an(Openlive::Booking) }
-      it { is_expected.to respond_to(:id) }
     end
 
     describe "#delete" do
