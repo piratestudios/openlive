@@ -10,18 +10,23 @@ describe Openlive::Artist do
     end
 
     let!(:user) do
-      VCR.use_cassette("artists/find/_user_create", record: :once) do
+      VCR.use_cassette("artists/find/_user_create", record: :none) do
         Openlive::User.create(attributes)
       end
     end
 
     describe "#find" do
-      around(:each) do |example|
-        VCR.use_cassette("artists/find/#{id}", record: :once, &example)
+      let(:artist) do
+        VCR.use_cassette("artists/create", record: :none) do
+          Openlive::Artist.create(name: "TestArtistCreate", userId: user.id)
+        end
       end
 
-      let(:artist) { Openlive::Artist.create(name: "TestArtistFind", userId: user.id) }
-      subject(:response) { Openlive::Artist.find(id) }
+      subject(:response) do
+        VCR.use_cassette("artists/find/#{id}", record: :none) do
+          Openlive::Artist.find(id)
+        end
+      end
 
       context "id is present" do
         let(:id) { artist.id }
@@ -41,10 +46,10 @@ describe Openlive::Artist do
     end
 
     describe "#create" do
-      subject(:response) { Openlive::Artist.create(name: "TestArtistCreate", userId: user.id) }
-
-      around(:each) do |example|
-        VCR.use_cassette("artists/create", record: :once, &example)
+      subject(:response) do
+        VCR.use_cassette("artists/create", record: :none) do
+          Openlive::Artist.create(name: "TestArtistCreate", userId: user.id)
+        end
       end
 
       it { is_expected.to be_an(Openlive::Artist) }
@@ -54,7 +59,7 @@ describe Openlive::Artist do
       subject { Openlive::Artist.all }
 
       around(:each) do |example|
-        VCR.use_cassette("artists/all", record: :once, &example)
+        VCR.use_cassette("artists/all", record: :none, &example)
       end
 
       it "returns an array" do

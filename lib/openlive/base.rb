@@ -95,5 +95,6 @@ end
 require "openlive/request"
 require "openlive/response"
 require "openlive/artist"
+require "openlive/booking"
 require "openlive/master_builder"
 require "openlive/user"

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://staging-api.openlive.co/v1/artists/xTMLuHQXEeaBPhLdFegN5Q
+    uri: https://staging-api.openlive.co/v1/artists/2WpxlnQKEeaBPhLdFegN5Q
     body:
       encoding: US-ASCII
       string: ''
@@ -25,12 +25,12 @@ http_interactions:
       x-powered-by:
       - ASP.NET
       date:
-      - Tue, 06 Sep 2016 09:53:33 GMT
+      - Tue, 06 Sep 2016 09:47:18 GMT
       connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"id":"xTMLuHQXEeaBPhLdFegN5Q","name":"TestArtistFind"}'
+      string: '{"id":"2WpxlnQKEeaBPhLdFegN5Q","name":"TestArtistFind"}'
     http_version: 
-  recorded_at: Tue, 06 Sep 2016 09:53:48 GMT
+  recorded_at: Wed, 07 Sep 2016 10:51:06 GMT
 recorded_with: VCR 3.0.3
