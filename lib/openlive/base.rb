@@ -12,7 +12,7 @@ module Openlive
     #
     # @param data [Hash]
     # @return [Hash] the API data
-    def initialize(data = nil, response: nil)
+    def initialize(data, response: nil)
       self.api_data = data
       self.response = response
     end
