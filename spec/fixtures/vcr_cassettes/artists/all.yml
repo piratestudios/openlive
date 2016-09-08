@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openlive.co/v1/artists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzI2NTY1ODcsImV4cCI6MTQ3MjY2MDE4NywiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoiakZVc1V1b1dBVW1FQUNFYzZadTZhdyIsInNjb3BlIjoidGVuYW50In0.dloLjTpuXomOVtCT_5Z0l8AoxyklVkIqAfZLkALUb6WPL5r9t4Gp1yofGyHvdDNKoUmDfviN0PgOK0Qc6Afyer879Bc0FUZwUAqAqw4tys6dVxf8vPZndu3jXhUi91hYlJAj_U-G0PZ9Ggln5puPeWYnSc8IawT6Z6vpFDiMjHqs2rv4dNf33c2WrwFnuhXsQLAvH4X1q3QHseW-MoDFnX-lD8Mk_ZauhBls8u_piIbkOuQMASjbOOcPxfTj7Wu-2ldS_Vs0AKIfzRBSJIg6jTekgiLoNBg2nvXtmJ4bMQoko2nauin-OB8Y_Sb1R5EPRvoqCfda7mQ_f6MsAllSUA
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Wed, 31 Aug 2016 15:16:29 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+    http_version: 
+  recorded_at: Wed, 31 Aug 2016 15:16:40 GMT
+- request:
+    method: get
+    uri: https://staging-api.openlive.co/v1/artists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMxNTAxOTIsImV4cCI6MTQ3MzE1Mzc5MiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.pv8iOrGHTesCDv_VaVpEVlBRO0Z0bqiQj8WClDZmvWP0FOpQrd4aAa2ozgKqvm01liZq4Rwol8Ev_extuFloMBD_BX5la_7z5D0AQ9V0y2uQ5R4Jf3i2f9jaU57yb9_zMybM8DG2UhDFKaMkJYniErUeiBwtUumwGY9Yai0-N1S9h27i8M-06En3e4VHOGcSDOD5Y5Wdr1uuWUDYFBpyaIFBfACk2mN94x7LI3aFFl43vSi0lzFg6qYIn4ldr_jP0d5ezlJXHcYX_zjgCOz3Jq-o1z4rgeLsRxJRoiFdNpFGiL7CSD03Ts1p1x1lH9D-3HA2dB8qJrEXdEOCds59vg
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Tue, 06 Sep 2016 08:23:14 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"2WpxlnQKEeaBPhLdFegN5Q","name":"Test6459464"}]}'
+    http_version: 
+  recorded_at: Tue, 06 Sep 2016 08:23:28 GMT
+recorded_with: VCR 3.0.3

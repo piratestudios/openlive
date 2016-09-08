@@ -1,27 +1,30 @@
-require 'pry'
-
 module Openlive
   class MasterBuilder < Base
-    attr_accessor :api_data
-
-    def initialize(data)
-      self.api_data = data
-    end
-
     class << self
+      # Find and return a masterbuilder record
+      #
+      # @param id [String]
+      # @return [MasterBuilder]
+      # @raise [APIError] Will raise an error on unsuccessful response
+      def find(id)
+        response = Request.get("masterbuilders/#{id}")
+
+        handle_response(response, error_class: APIError) do |response|
+          new(response.body, response: response)
+        end
+      end
+
       # Fetch and return a list of all master builder units
       #
       # @return [Array<MasterBuilder>]
-
+      # @raise [APIError] Will raise an error on unsuccessful response
       def all
-        response = Request.create("masterbuilders")
+        response = Request.get("masterbuilders")
 
-        if response.success?
+        handle_response(response, error_class: Openlive::APIError) do |response|
           response.body['data'].map do |mb|
-            new(mb)
+            new(mb, response: response)
           end
-        else
-          raise APIError, "masterbuilders endpoint returned a #{response.status} status"
         end
       end
     end

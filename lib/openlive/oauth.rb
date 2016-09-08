@@ -3,6 +3,7 @@ require "oauth2/access_token"
 
 module Openlive
   class OAuth
+    # @return [OAuth2::AccessToken] Used to store the existing token
     attr_accessor :current_token
 
     # Return or instantiate the OAuth client
