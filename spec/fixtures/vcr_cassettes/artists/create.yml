@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://staging-api.openlive.co/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"username":"Test6459464","email":"admin+6459464@piratestudios.co.uk"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMxNTAwNjEsImV4cCI6MTQ3MzE1MzY2MSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.LAwaxjPgHt3WX1CgdveJo5pITqWZjfkbMBG3B2sh02Op-Y-s0NdSNrdJsakzjjdLGH0uFIvOYEs0MeRy5BGmz3Uo12_Lo6F_pRwB1Oo6afPKfNsP5Hgrer38TRdEaNM4ZZGDpqFgaMrK1vk3rQ2XpO2SdMocx2wes3BOhpXdZkRg21zsGFtopTPkqdQU55Rbnb5Z0_LXE8cbR9XuhSHHw6EhrK6Sk99jCy7X7tnA4tVLDt_KBEQgr_mNd6z1QlyOHubFYeg709lFAEoXFv5MTqjGNQElRUlgASNkW30hrIYhumfmeHZeQs1wZQmr9cg_6I_wtsR-n-Mk6LvoORFvKA
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
+      location:
+      - https://staging-api.openlive.co/v1/users/7KnDOJW2fkmRq_z4uoudoQ
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Tue, 06 Sep 2016 08:21:03 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"7KnDOJW2fkmRq_z4uoudoQ","username":"Test6459464","email":"admin+6459464@piratestudios.co.uk","artists":[]}'
+    http_version: 
+  recorded_at: Tue, 06 Sep 2016 08:21:17 GMT
+- request:
+    method: post
+    uri: https://staging-api.openlive.co/v1/artists
+    body:
+      encoding: UTF-8
+      string: '{"name":"Test6459464","userId":"7KnDOJW2fkmRq_z4uoudoQ"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMxNTAwNjEsImV4cCI6MTQ3MzE1MzY2MSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.LAwaxjPgHt3WX1CgdveJo5pITqWZjfkbMBG3B2sh02Op-Y-s0NdSNrdJsakzjjdLGH0uFIvOYEs0MeRy5BGmz3Uo12_Lo6F_pRwB1Oo6afPKfNsP5Hgrer38TRdEaNM4ZZGDpqFgaMrK1vk3rQ2XpO2SdMocx2wes3BOhpXdZkRg21zsGFtopTPkqdQU55Rbnb5Z0_LXE8cbR9XuhSHHw6EhrK6Sk99jCy7X7tnA4tVLDt_KBEQgr_mNd6z1QlyOHubFYeg709lFAEoXFv5MTqjGNQElRUlgASNkW30hrIYhumfmeHZeQs1wZQmr9cg_6I_wtsR-n-Mk6LvoORFvKA
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
+      location:
+      - https://staging-api.openlive.co/v1/artists/2WpxlnQKEeaBPhLdFegN5Q
+      server:
+      - Kestrel
+      x-powered-by:
+      - ASP.NET
+      date:
+      - Tue, 06 Sep 2016 08:21:03 GMT
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"2WpxlnQKEeaBPhLdFegN5Q","name":"Test6459464"}'
+    http_version: 
+  recorded_at: Tue, 06 Sep 2016 08:21:18 GMT
+recorded_with: VCR 3.0.3
