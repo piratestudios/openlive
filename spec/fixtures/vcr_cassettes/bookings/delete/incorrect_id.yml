@@ -1,38 +1,38 @@
 ---
 http_interactions:
 - request:
-    method: delete
-    uri: https://staging-api.openlive.co/v1/bookings/incorrect_id?Content-Type=application%2Fjson
+    method: post
+    uri: https://staging-api.openlive.co/v1/bookings/incorrect_id
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
       User-Agent:
       - Faraday v0.9.2
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMyNTY5MzEsImV4cCI6MTQ3MzI2MDUzMSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.atRbaIZcbYlbHOYO7yON3pCH5oQ3IBJgxk0dwaLgOP6pq61ZjUdrEJYp2I13CwUV4-8I8-PyExgt8qSxRQN14eSlzGIg-wZNqmG5RqZ1ZmOI7ehgBpUsduFth5eTsaveiY6uQXEcJCbbmIZg9qrJhjNK09ZfCzZHhkAmuIN2Y3UnYZGlFl7ee2r55QG0U7nVt0eds7auH_Xtvn1IGQ5jjcUh3PEoxb48UO6aufiM-kIhUd-4g0Lr33vkSxa_Mwno_u1ORncJbKriV8V3Y6v5v7bhjXj5lHVMZQ9_qmdk9e5MOMf5LGDllZr-6MFXm3fuBv4bg5RSTUvNnLicvYGKXQ
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMyNjc1NzcsImV4cCI6MTQ3MzI3MTE3NywiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.ROtbpCImj-D-_qC7FnN1IOl8Fgrjjql4jIceL7jPXpH7OxIBe2zw9rRZhDdvynkETJ8jBqoVpJJspG5uS_Wd3qy8PGJWC2o2W2kEAEGRfuoAPidR2VKJMVKfElmQ1OHcogGwze76eoMfaFfFbrHm3mSepMEvqv7s5wbgMobClMol0UBWgKn0R9RnXu7ygUdjIiNuVHEjMS2TOZ2sdFVEtOy4YjA7xv9qQBpNa6CHMunsFol75ug9LInFbbKC39id1auOwcAfskN__XWTBImPn-cOtwf2LKiQgGSfE5maDlfChj5UL9L9d9swLVVWIDgDVyJ1Z--jlO8fxX75JvhTKA
+      Content-Type:
+      - application/json
   response:
     status:
-      code: 401
+      code: 404
       message: 
     headers:
       content-length:
       - '0'
       server:
       - Kestrel
-      www-authenticate:
-      - Bearer error="invalid_token", error_description="The token is expired"
       x-powered-by:
       - ASP.NET
       date:
-      - Wed, 07 Sep 2016 15:28:53 GMT
+      - Wed, 07 Sep 2016 16:59:39 GMT
       connection:
       - close
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 07 Sep 2016 15:29:05 GMT
+  recorded_at: Wed, 07 Sep 2016 16:59:49 GMT
 - request:
     method: delete
     uri: https://staging-api.openlive.co/v1/bookings/incorrect_id
@@ -43,29 +43,29 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMyNTY5MzEsImV4cCI6MTQ3MzI2MDUzMSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.atRbaIZcbYlbHOYO7yON3pCH5oQ3IBJgxk0dwaLgOP6pq61ZjUdrEJYp2I13CwUV4-8I8-PyExgt8qSxRQN14eSlzGIg-wZNqmG5RqZ1ZmOI7ehgBpUsduFth5eTsaveiY6uQXEcJCbbmIZg9qrJhjNK09ZfCzZHhkAmuIN2Y3UnYZGlFl7ee2r55QG0U7nVt0eds7auH_Xtvn1IGQ5jjcUh3PEoxb48UO6aufiM-kIhUd-4g0Lr33vkSxa_Mwno_u1ORncJbKriV8V3Y6v5v7bhjXj5lHVMZQ9_qmdk9e5MOMf5LGDllZr-6MFXm3fuBv4bg5RSTUvNnLicvYGKXQ
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMzMjI4MTksImV4cCI6MTQ3MzMyNjQxOSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.FHN3OqGF0XX6DRXMVBkjgmknMuebJrttMmt4qCsh9Ie7ByfK11ad9DKVDRI3F1kjm899UDJzhmn8x-qmmj1-4zw36V8BJ8b0i5yYZazUfClOMrw-29gHf22tGKr6e2ghRrpWnk0cQzEUR6nT_uY6z792Fe1_vRm4wlsMEqtC-CkDMUJW9lqcmryoZ12hw13EiAXQImYOvkVkexRD1MjjaU5-pagX48pRVcisVX1SU2okznsGrGhPT6QtINGiUVlM_Tohe6jZ8cR_GfAuGxrWQjLtj3Aq8qesaW3ZnTlLLpzDPqivO336uEhvWr4ZYyZHeZgb990DijIo9Md62eeJrA
       Content-Type:
       - application/json
   response:
     status:
-      code: 401
+      code: 400
       message: 
     headers:
-      content-length:
-      - '0'
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json; charset=utf-8
       server:
       - Kestrel
-      www-authenticate:
-      - Bearer error="invalid_token", error_description="The token is expired"
       x-powered-by:
       - ASP.NET
       date:
-      - Wed, 07 Sep 2016 15:38:28 GMT
+      - Thu, 08 Sep 2016 08:20:26 GMT
       connection:
       - close
     body:
       encoding: UTF-8
-      string: ''
+      string: '{"bookingId":["BookingId is required"]}'
     http_version: 
-  recorded_at: Wed, 07 Sep 2016 15:38:40 GMT
+  recorded_at: Thu, 08 Sep 2016 08:20:38 GMT
 recorded_with: VCR 3.0.3

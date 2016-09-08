@@ -37,43 +37,4 @@ http_interactions:
       string: '{"id":"ug__6ilP80aqC9wCyaRPtg","username":"TestArtistUser","email":"admin+testartistuser@piratestudios.co.uk","artists":[]}'
     http_version: 
   recorded_at: Tue, 06 Sep 2016 09:45:29 GMT
-- request:
-    method: post
-    uri: https://identity.openlive.co/connect/token
-    body:
-      encoding: UTF-8
-      string: grant_type=client_credentials&scope=tenant
-    headers:
-      User-Agent:
-      - Faraday v0.9.2
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Authorization:
-      - Basic cExGbENGUHVVMDI3dVNkWmZBaUtRZzo1ZGNmMmU1NzVkNmI0MjdjYTZmZjJhZTNmZGIwZDBlMQ==
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      cache-control:
-      - no-store, no-cache, max-age=0
-      pragma:
-      - no-cache
-      transfer-encoding:
-      - chunked
-      content-type:
-      - application/json
-      server:
-      - Kestrel
-      x-powered-by:
-      - ASP.NET
-      date:
-      - Wed, 07 Sep 2016 14:02:11 GMT
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMyNTY5MzEsImV4cCI6MTQ3MzI2MDUzMSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.atRbaIZcbYlbHOYO7yON3pCH5oQ3IBJgxk0dwaLgOP6pq61ZjUdrEJYp2I13CwUV4-8I8-PyExgt8qSxRQN14eSlzGIg-wZNqmG5RqZ1ZmOI7ehgBpUsduFth5eTsaveiY6uQXEcJCbbmIZg9qrJhjNK09ZfCzZHhkAmuIN2Y3UnYZGlFl7ee2r55QG0U7nVt0eds7auH_Xtvn1IGQ5jjcUh3PEoxb48UO6aufiM-kIhUd-4g0Lr33vkSxa_Mwno_u1ORncJbKriV8V3Y6v5v7bhjXj5lHVMZQ9_qmdk9e5MOMf5LGDllZr-6MFXm3fuBv4bg5RSTUvNnLicvYGKXQ","expires_in":3600,"token_type":"Bearer"}'
-    http_version: 
-  recorded_at: Wed, 07 Sep 2016 14:02:22 GMT
 recorded_with: VCR 3.0.3

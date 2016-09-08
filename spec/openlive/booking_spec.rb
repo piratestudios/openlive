@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Openlive::Booking do
   describe "class methods" do
-    let!(:user) do
+    let(:user) do
       VCR.use_cassette("artists/find/_user_create", record: :new_episodes) do
         Openlive::User.create(
           username: "TestArtistUser",
@@ -11,13 +11,13 @@ describe Openlive::Booking do
       end
     end
 
-    let!(:artist) do
+    let(:artist) do
       VCR.use_cassette("artists/create", record: :new_episodes) do
         Openlive::Artist.create(name: "TestArtistCreate", userId: user.id)
       end
     end
 
-    let!(:masterbuilders) do
+    let(:masterbuilders) do
       VCR.use_cassette("masterbuilders/all", record: :new_episodes) do
         Openlive::MasterBuilder.all
       end
@@ -68,14 +68,25 @@ describe Openlive::Booking do
     end
 
     describe "#delete" do
+      let(:booking) do
+        VCR.use_cassette("bookings/delete/_booking_create", record: :new_episodes, exclusive: true) do
+          Openlive::Booking.create(
+            artistId: artist.id,
+            masterbuilderId: masterbuilder.id,
+            start: Time.new(2016,9,10,15,0,0),
+            finish: Time.new(2016,9,10,16,0,0)
+          )
+        end
+      end
+
       subject(:response) do
-        VCR.use_cassette("bookings/delete", record: :new_episodes) do
+        VCR.use_cassette("bookings/delete/#{id}", record: :new_episodes, exclusive: true) do
           Openlive::Booking.delete(id)
         end
       end
 
       context "id is present" do
-        let(:id) { "_iIprHUDEeaBPhLdFegN5Q" }
+        let(:id) { booking.id }
         subject { response }
 
         it { is_expected.to be true }
