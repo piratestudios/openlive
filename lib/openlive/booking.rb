@@ -1,5 +1,13 @@
 module Openlive
   class Booking < Base
+    # Convenience method for deleting this booking
+    #
+    # @return [Truthy] whether the record was successfully deleted or not
+    # @raise [APIError] Will raise an error on unsuccessful response
+    def delete
+      self.class.delete(id)
+    end
+
     class << self
       # Find and return a booking record
       #

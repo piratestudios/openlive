@@ -1,6 +1,18 @@
 require 'spec_helper'
 
 describe Openlive::Booking do
+  describe "instance methods" do
+    describe "#delete" do
+      let(:booking) { Openlive::Booking.new({ "id" => "test" }) }
+      before { allow(Openlive::Booking).to receive(:delete) { true } }
+      after { booking.delete }
+
+      it "calls the class delete method with the ID" do
+        expect(Openlive::Booking).to receive(:delete).with("test")
+      end
+    end
+  end
+
   describe "class methods" do
     let(:user) do
       VCR.use_cassette("artists/find/_user_create", record: :new_episodes) do
