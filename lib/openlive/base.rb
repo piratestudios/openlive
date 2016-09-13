@@ -79,8 +79,11 @@ module Openlive
           "endpoint returned a #{response.status} status"
         end
 
-        if response.success?
+        case
+        when response.success?
           block.call(response)
+        when response.status == 404
+          nil
         else
           raise error_class, message
         end

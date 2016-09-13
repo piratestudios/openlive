@@ -25,6 +25,21 @@ describe Openlive::Response do
       end
     end
 
+    describe "#status" do
+      subject { response.status }
+      before { allow(faraday_response).to receive(:status) { status } }
+
+      context "is successful" do
+        let(:status) { 200 }
+        it { is_expected.to eq 200 }
+      end
+
+      context "is not successful" do
+        let(:status) { 404 }
+        it { is_expected.to eq 404 }
+      end
+    end
+
     describe "#body" do
       subject { response.body }
       let(:json) { '{"test": "Excellent!"}' }

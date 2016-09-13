@@ -10,27 +10,29 @@ http_interactions:
       User-Agent:
       - Faraday v0.9.2
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzMzMjI4MTksImV4cCI6MTQ3MzMyNjQxOSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.FHN3OqGF0XX6DRXMVBkjgmknMuebJrttMmt4qCsh9Ie7ByfK11ad9DKVDRI3F1kjm899UDJzhmn8x-qmmj1-4zw36V8BJ8b0i5yYZazUfClOMrw-29gHf22tGKr6e2ghRrpWnk0cQzEUR6nT_uY6z792Fe1_vRm4wlsMEqtC-CkDMUJW9lqcmryoZ12hw13EiAXQImYOvkVkexRD1MjjaU5-pagX48pRVcisVX1SU2okznsGrGhPT6QtINGiUVlM_Tohe6jZ8cR_GfAuGxrWQjLtj3Aq8qesaW3ZnTlLLpzDPqivO336uEhvWr4ZYyZHeZgb990DijIo9Md62eeJrA
+      - Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzM0MDkwNzEsImV4cCI6MTQ3MzQxMjY3MSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoicExGbENGUHVVMDI3dVNkWmZBaUtRZyIsInNjb3BlIjoidGVuYW50In0.kv6u7K74Kew_TUt2Bq-f2sxvA_9iTGb9FJJMgMIFJzo0YuYMOr0WK4HhszFUGkwTdzXynPzy6aU3DH4ffJS6u4C1XfS_WSo3o52wAca15EcP4VpoUYa5mXHcn7hsRtJ-oQ5ckTT5r6_AOcj-oDP9z6v_6VQAvRlvH1THlYukwE-MS9ojfjyoJep1GNsgtnq2E084tjFsboiG4qAx5oeFtBLRqHfbUCqJKtAIcXnKs9pLxdPUeaf0FUq_Mix3R35nQ-kz6c3QP97Yv0BB8IBtpWc7Ri9lUROLxaePsIq-tWuwQmNurB2R7pqsbHDHKrasmXs5W-zn0tX1ABkOk3N_6g
       Content-Type:
       - application/json
   response:
     status:
-      code: 404
+      code: 401
       message: 
     headers:
       content-length:
       - '0'
       server:
       - Kestrel
+      www-authenticate:
+      - Bearer error="invalid_token", error_description="The issuer is invalid"
       x-powered-by:
       - ASP.NET
       date:
-      - Thu, 08 Sep 2016 08:20:25 GMT
+      - Fri, 09 Sep 2016 08:17:57 GMT
       connection:
       - close
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 08 Sep 2016 08:20:37 GMT
+  recorded_at: Fri, 09 Sep 2016 08:18:16 GMT
 recorded_with: VCR 3.0.3

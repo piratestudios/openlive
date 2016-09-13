@@ -17,6 +17,13 @@ module Openlive
       response.success?
     end
 
+    # Return the response status
+    #
+    # @return [Integer]
+    def status
+      response.status
+    end
+
     # Parse the response from the server
     #
     # @return [Hash,Nil]

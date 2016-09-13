@@ -26,9 +26,7 @@ describe Openlive::MasterBuilder do
         let(:id) { "incorrect_id" }
         subject { response }
 
-        it "raises an error" do
-          expect { subject }.to raise_error(Openlive::APIError)
-        end
+        it { is_expected.to be nil }
       end
     end
 
