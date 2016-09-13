@@ -1,6 +1,20 @@
 require 'spec_helper'
 
 describe Openlive::User do
+  describe "instance methods" do
+    describe "#artists" do
+      let(:user) { Openlive::User.new(api_data) }
+      let(:api_data) { { "id" => "testuser", "artists" => [{ "id" => "test", "name" => "Test Artist" }] } }
+      subject { user.artists }
+
+      it { is_expected.to be_an(Array) }
+
+      it "instantiates the artist objects" do
+        expect(subject.first).to be_an(Openlive::Artist)
+      end
+    end
+  end
+
   describe "class methods" do
     describe "#find" do
       let(:attributes) do
