@@ -5,8 +5,12 @@ module Openlive
     # @return [Array<Openlive::Artist>]
     def artists
       unless api_data['artists'].nil?
-        @artists ||= api_data['artists'].map do |attributes|
-          Artist.new(attributes)
+        if api_data['artists'].empty?
+          []
+        else
+          @artists ||= api_data['artists'].map do |attributes|
+            Artist.new(attributes)
+          end
         end
       end
     end
