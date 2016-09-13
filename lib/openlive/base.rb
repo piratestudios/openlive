@@ -76,7 +76,7 @@ module Openlive
         when !message.nil?
           message
         when error_class == Openlive::APIError
-          "endpoint returned a #{response.status} status"
+          "endpoint returned a #{response.status} status: #{response.body}"
         end
 
         case
