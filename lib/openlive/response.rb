@@ -28,7 +28,9 @@ module Openlive
     #
     # @return [Hash,Nil]
     def body
-      @body ||= JSON.parse(response.body)
+      @body ||= (
+        JSON.parse(response.body) if response.body.length > 0
+      )
     end
 
     # Convenience method for fetching the error message

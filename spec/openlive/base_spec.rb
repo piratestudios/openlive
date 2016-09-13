@@ -68,7 +68,7 @@ describe Openlive::Base do
 
     describe "#handle_response" do
       let(:base) { Openlive::Base }
-      let(:response) { double('response') }
+      let(:response) { double('response', body: "test") }
       let(:error_class) { nil }
       let(:message) { nil }
 
@@ -113,7 +113,7 @@ describe Openlive::Base do
             it "raises an APIError" do
               expect {
                 base.send(:handle_response, response, error_class: error_class)
-              }.to raise_exception(Openlive::APIError, "endpoint returned a #{response.status} status")
+              }.to raise_exception(Openlive::APIError, "endpoint returned a #{response.status} status: #{response.body}")
             end
           end
         end

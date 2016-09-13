@@ -42,11 +42,25 @@ describe Openlive::Response do
 
     describe "#body" do
       subject { response.body }
-      let(:json) { '{"test": "Excellent!"}' }
-
       before { allow(faraday_response).to receive(:body) { json } }
 
-      it { is_expected.to eq({ "test" => "Excellent!" }) }
+      context "valid JSON" do
+        let(:json) { '{"test": "Excellent!"}' }
+        it { is_expected.to eq({ "test" => "Excellent!" }) }
+      end
+
+      context "invalid JSON" do
+        let(:json) { '{test: "Excellent!"}' }
+
+        it "raises an error" do
+          expect { subject }.to raise_error(JSON::ParserError)
+        end
+      end
+
+      context "blank" do
+        let(:json) { "" }
+        it { is_expected.to be nil }
+      end
     end
 
     describe "#error_message" do
