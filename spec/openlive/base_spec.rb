@@ -40,6 +40,23 @@ describe Openlive::Base do
 
       it { is_expected.to eq(oauth) }
     end
+
+    describe "#refresh" do
+      let(:api_data) { { "api_thing": "yes" } }
+      let(:response) { double('response') }
+      let(:obj) { double('obj', api_data: api_data, response: response) }
+
+      before { allow(Openlive::Base).to receive(:find) { obj } }
+      after { base.refresh }
+
+      it "sets the api data" do
+        expect(base).to receive(:api_data=).with(api_data)
+      end
+
+      it "sets the response" do
+        expect(base).to receive(:response=).with(response)
+      end
+    end
   end
 
   describe "class methods" do

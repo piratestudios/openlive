@@ -31,6 +31,16 @@ module Openlive
       self.class.oauth
     end
 
+    # Refetch data from the API and update existing attributes
+    #
+    # @return [self]
+    def refresh
+      new_data = self.class.find(id)
+      self.api_data = new_data.api_data
+      self.response = new_data.response
+      self
+    end
+
     # Pass method calls through to the API data
     def method_missing(name, *args, &block)
       if api_data.is_a?(Hash)
