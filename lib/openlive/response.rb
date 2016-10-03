@@ -17,11 +17,20 @@ module Openlive
       response.success?
     end
 
+    # Return the response status
+    #
+    # @return [Integer]
+    def status
+      response.status
+    end
+
     # Parse the response from the server
     #
     # @return [Hash,Nil]
     def body
-      @body ||= JSON.parse(response.body)
+      @body ||= (
+        JSON.parse(response.body) if response.body.length > 0
+      )
     end
 
     # Convenience method for fetching the error message

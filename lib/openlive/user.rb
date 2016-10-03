@@ -1,5 +1,20 @@
 module Openlive
   class User < Base
+    # Convenience method for returning artists associated with user
+    #
+    # @return [Array<Openlive::Artist>]
+    def artists
+      unless api_data['artists'].nil?
+        if api_data['artists'].empty?
+          []
+        else
+          @artists ||= api_data['artists'].map do |attributes|
+            Artist.new(attributes)
+          end
+        end
+      end
+    end
+
     class << self
       # Find and return a user record
       #

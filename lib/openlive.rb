@@ -8,7 +8,7 @@ module Openlive
 
   with_configuration do
     has :oauth_settings, classes: Hash, default: {
-      site: "https://identity.openlive.co",
+      site: "https://staging-identity.openlive.co",
       authorize_url: "/connect/authorize",
       token_url: "/connect/token",
       scope: "tenant"

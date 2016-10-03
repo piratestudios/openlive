@@ -1,6 +1,32 @@
 require 'spec_helper'
 
 describe Openlive::User do
+  describe "instance methods" do
+    describe "#artists" do
+      let(:user) { Openlive::User.new(api_data.dup) }
+      let(:api_data) { { "id" => "testuser", "artists" => [{ "id" => "test", "name" => "Test Artist" }] } }
+      subject { user.artists }
+
+      it { is_expected.to be_an(Array) }
+
+      it "instantiates the artist objects" do
+        expect(subject.first).to be_an(Openlive::Artist)
+      end
+
+      context "artists is empty, then not empty" do
+        subject { user }
+
+        it "updates correctly" do
+          user.api_data['artists'] = []
+          expect(user.artists).to eq([])
+          user.api_data['artists'] = api_data['artists']
+          expect(user.artists).to be_an(Array)
+          expect(user.artists.first).to be_an(Openlive::Artist)
+        end
+      end
+    end
+  end
+
   describe "class methods" do
     describe "#find" do
       let(:attributes) do
@@ -33,9 +59,7 @@ describe Openlive::User do
         let(:id) { "incorrect_id" }
         subject { response }
 
-        it "raises an error" do
-          expect { subject }.to raise_error(Openlive::APIError)
-        end
+        it { is_expected.to be nil }
       end
     end
 

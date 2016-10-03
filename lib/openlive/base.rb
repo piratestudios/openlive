@@ -31,6 +31,16 @@ module Openlive
       self.class.oauth
     end
 
+    # Refetch data from the API and update existing attributes
+    #
+    # @return [self]
+    def refresh
+      new_data = self.class.find(id)
+      self.api_data = new_data.api_data
+      self.response = new_data.response
+      self
+    end
+
     # Pass method calls through to the API data
     def method_missing(name, *args, &block)
       if api_data.is_a?(Hash)
@@ -76,11 +86,14 @@ module Openlive
         when !message.nil?
           message
         when error_class == Openlive::APIError
-          "endpoint returned a #{response.status} status"
+          "endpoint returned a #{response.status} status: #{response.body}"
         end
 
-        if response.success?
+        case
+        when response.success?
           block.call(response)
+        when response.status == 404
+          nil
         else
           raise error_class, message
         end
