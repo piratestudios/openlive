@@ -78,16 +78,17 @@ describe Openlive::Base do
       end
 
       describe "it always sets the Bearer token to ensure not-expired tokens" do
-        let(:faraday) { double('faraday', url_prefix: true, authorization: true) }
+        let(:faraday) { double('faraday', :url_prefix= => true, :authorization => true) }
 
         before do
           allow(Faraday).to receive(:new) { faraday }
         end
 
+        #FIXME: Yet another spec that doesn't work when it should
         it "sets the token every time" do
-          3.times do
-            expect(faraday).to receive(:authorization).with(:Bearer, anything)
-            subject
+          2.times do
+            expect(faraday).to receive(:authorization).with(:Bearer, "Excellent!")
+            Openlive::Base.connection
           end
         end
       end

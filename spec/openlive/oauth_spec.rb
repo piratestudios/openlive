@@ -53,9 +53,7 @@ describe Openlive::OAuth do
 
   describe "#requisition_token" do
     after do
-      VCR.use_cassette("oauth_token") do
-        subject.requisition_token
-      end
+      subject.requisition_token
     end
 
     it "gets a token from the identity server" do
