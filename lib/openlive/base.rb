@@ -60,10 +60,12 @@ module Openlive
             faraday.adapter  Faraday.default_adapter
           end
 
-          conn.authorization(:Bearer, oauth.token.token)
           conn.url_prefix = Openlive.configuration.base_uri
           conn
         )
+
+        @connection.authorization(:Bearer, oauth.token.token)
+        @connection
       end
 
       # OAuth handler

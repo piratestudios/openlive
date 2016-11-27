@@ -20,7 +20,7 @@ module Openlive
     }
 
     has :default_headers, classes: Hash, default: {}
-    has :base_uri, classes: String, default: (ENV['OPENLIVE_BASE_URI'] || "https://api.openlive.co/v1")
+    has :base_uri, classes: String, default: (ENV['OPENLIVE_BASE_URI'] || "https://staging-api.openlive.co/v1")
   end
 
   class Error < StandardError; end
