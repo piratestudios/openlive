@@ -2,14 +2,31 @@ require 'spec_helper'
 
 describe Openlive::Booking do
   describe "instance methods" do
+    let(:booking) do
+      Openlive::Booking.new({
+        "id" => "test",
+        "start" => Time.now.strftime("%Y-%m-%dT%H:%M:%S.%LZ"),
+        "finish" => (Time.now + 4.hours).strftime("%Y-%m-%dT%H:%M:%S.%LZ")
+      })
+    end
+
     describe "#delete" do
-      let(:booking) { Openlive::Booking.new({ "id" => "test" }) }
       before { allow(Openlive::Booking).to receive(:delete) { true } }
       after { booking.delete }
 
       it "calls the class delete method with the ID" do
         expect(Openlive::Booking).to receive(:delete).with("test")
       end
+    end
+
+    describe "#start" do
+      subject { booking.start }
+      it { is_expected.to be_a(Time) }
+    end
+
+    describe "#finish" do
+      subject { booking.finish }
+      it { is_expected.to be_a(Time) }
     end
   end
 
