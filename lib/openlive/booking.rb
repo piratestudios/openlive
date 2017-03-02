@@ -8,6 +8,20 @@ module Openlive
       self.class.delete(id)
     end
 
+    # Return time object for start time
+    #
+    # @return [Time]
+    def start
+      Time.parse(api_data[:start])
+    end
+
+    # Return time object for finish time
+    #
+    # @return [Time]
+    def finish
+      Time.parse(api_data[:finish])
+    end
+
     class << self
       # Find and return a booking record
       #
@@ -54,6 +68,9 @@ module Openlive
 
       private
 
+      # Called when creating a booking on OpenLIVE API
+      #
+      # @return [Hash]
       def format_attributes(attributes)
         attributes.update(attributes) do |key, val|
           if val.is_a?(Time) || val.is_a?(DateTime)
