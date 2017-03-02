@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://identity.openlive.co/connect/token
+    uri: https://staging-identity.openlive.co/connect/token
     body:
       encoding: UTF-8
       string: grant_type=client_credentials&scope=tenant
@@ -36,7 +36,7 @@ http_interactions:
       - close
     body:
       encoding: UTF-8
-      string: '{"access_token":"<ACCESS_TOKEN>","expires_in":3600,"token_type":"Bearer"}'
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjZCN0FDQzUyMDMwNUJGREI0RjcyNTJEQUVCMjE3N0NDMDkxRkFBRTEiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJhM3JNVWdNRnY5dFBjbExhNnlGM3pBa2ZxdUUifQ.eyJuYmYiOjE0NzI2NTY1ODcsImV4cCI6MTQ3MjY2MDE4NywiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5vcGVubGl2ZS5jbyIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHkub3BlbmxpdmUuY28vcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoiakZVc1V1b1dBVW1FQUNFYzZadTZhdyIsInNjb3BlIjoidGVuYW50In0.dloLjTpuXomOVtCT_5Z0l8AoxyklVkIqAfZLkALUb6WPL5r9t4Gp1yofGyHvdDNKoUmDfviN0PgOK0Qc6Afyer879Bc0FUZwUAqAqw4tys6dVxf8vPZndu3jXhUi91hYlJAj_U-G0PZ9Ggln5puPeWYnSc8IawT6Z6vpFDiMjHqs2rv4dNf33c2WrwFnuhXsQLAvH4X1q3QHseW-MoDFnX-lD8Mk_ZauhBls8u_piIbkOuQMASjbOOcPxfTj7Wu-2ldS_Vs0AKIfzRBSJIg6jTekgiLoNBg2nvXtmJ4bMQoko2nauin-OB8Y_Sb1R5EPRvoqCfda7mQ_f6MsAllSUA","expires_in":3600,"token_type":"Bearer"}'
     http_version: 
   recorded_at: Tue, 23 Aug 2016 08:54:22 GMT
 recorded_with: VCR 3.0.3

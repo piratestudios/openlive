@@ -69,12 +69,28 @@ describe Openlive::Base do
 
       it { is_expected.to be_a(Faraday::Connection) }
 
+      it "sets the URL prefix" do
+        expect(subject.url_prefix).to eq(URI(Openlive.configuration.base_uri))
+      end
+
       it "sets the Bearer token" do
         expect(subject.headers["Authorization"]).to eq("Bearer Excellent!")
       end
 
-      it "sets the URL prefix" do
-        expect(subject.url_prefix).to eq(URI(Openlive.configuration.base_uri))
+      describe "it always sets the Bearer token to ensure not-expired tokens" do
+        let(:faraday) { double('faraday', :url_prefix= => true, :authorization => true) }
+
+        before do
+          allow(Faraday).to receive(:new) { faraday }
+        end
+
+        #FIXME: Yet another spec that doesn't work when it should
+        it "sets the token every time" do
+          2.times do
+            expect(faraday).to receive(:authorization).with(:Bearer, "Excellent!")
+            Openlive::Base.connection
+          end
+        end
       end
     end
 
